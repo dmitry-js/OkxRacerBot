@@ -1,4 +1,4 @@
-[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/OKX_official_bot/OKX_Racer?startapp=linkCode_116016253)
+[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/OKX_official_bot/OKX_Racer?startapp=linkCode_127967659)
 
 ## Recommendation before use
 
@@ -18,7 +18,7 @@
 | Auto-daily                                                |     ✅     |
 
 
-## [Settings](https://github.com/Desamod/OkxRacerBot/blob/master/.env-example/)
+## [Settings](https://github.com/lloydbanks/OkxRacerBot/blob/master/.env-example/)
 | Settings                |                                 Description                                 |
 |-------------------------|:---------------------------------------------------------------------------:|
 | **API_ID / API_HASH**   | Platform data from which to run the Telegram session (by default - android) |
@@ -45,9 +45,9 @@ Before you begin, make sure you have the following installed:
 3. Record the API_ID and API_HASH provided after registering your application in the .env file.
 
 ## Installation
-You can download the [**repository**](https://github.com/Desamod/OkxRacerBot) by cloning it to your system and installing the necessary dependencies:
+You can download the [**repository**](https://github.com/lloydbanks/OkxRacerBot) by cloning it to your system and installing the necessary dependencies:
 ```shell
-git https://github.com/Desamod/OkxRacerBot
+git https://github.com/lloydbanks/OkxRacerBot
 cd OkxRacerBot
 ```
 
@@ -102,10 +102,4 @@ You can also use arguments for quick start, for example:
 # 1 - Run clicker
 # 2 - Creates a session
 ```
-
-### Contacts
-
-For support or questions, you can contact me
-
-[![Static Badge](https://img.shields.io/badge/Telegram-Channel-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/desforge_crypto)
 
