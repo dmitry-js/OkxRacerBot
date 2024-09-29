@@ -4,8 +4,6 @@
 
 # 🔥🔥 Use PYTHON 3.10 🔥🔥
 
-> 🇷 🇺 README in russian available [here](README-RU.md)
-
 ## Features  
 | Feature                                                   | Supported |
 |-----------------------------------------------------------|:---------:|
@@ -18,18 +16,18 @@
 | Auto-daily                                                |     ✅     |
 
 
-## [Settings](https://github.com/lloydbanks/OkxRacerBot/blob/master/.env-example/)
-| Settings                |                                 Description                                 |
-|-------------------------|:---------------------------------------------------------------------------:|
-| **API_ID / API_HASH**   | Platform data from which to run the Telegram session (by default - android) |
-| **SLEEP_TIME**          |             Sleep time between cycles (by default - [300, 500])             |
-| **AUTO_BOOST**          |                     Buying a boost (by default - True)                      |
-| **BOOSTERS**            |              Types of boost to buy (for all by default - True)              |
-| **AUTO_TASK**           |                Auto tasks (except KYC task) (default - True)                |
-| **REF_ID**              |                                Referral link                                |
-| **RANDOM_PREDICTION**   |                Using random for prediction (default - True)                 |
-| **MAX_COMBO_COUNT**     |                       Max combo count (default - 28)                        |
-| **USE_PROXY_FROM_FILE** | Whether to use a proxy from the bot/config/proxies.txt file (True / False)  |
+## Settings
+| Settings              |                                            Description                                            |
+|-----------------------|:-------------------------------------------------------------------------------------------------:|
+| **API_ID / API_HASH** |            Platform data from which to run the Telegram session (by default - android)            |
+| **SLEEP_TIME**        |                        Sleep time between cycles (by default - [300, 500])                        |
+| **AUTO_BOOST**        |                                Buying a boost (by default - True)                                 |
+| **BOOSTERS**          |                         Types of boost to buy (for all by default - True)                         |
+| **AUTO_TASK**         |                           Auto tasks (except KYC task) (default - True)                           |
+| **REF_ID**            |                                           Referral link                                           |
+| **RANDOM_PREDICTION** |                           Using random for prediction (default - True)                            |
+| **MAX_COMBO_COUNT**   |                                  Max combo count (default - 28)                                   |
+| [USE_PROXY_FROM_FILE](#Proxy-configuration) | Whether to use a proxy from the bot/config/proxies.txt file (True / False) |
 
 ## Quick Start 📚
 
@@ -103,3 +101,13 @@ You can also use arguments for quick start, for example:
 # 2 - Creates a session
 ```
 
+# Proxy configuration
+You can attach a proxy to a session name.
+Open `bot/config/proxies.txt` and add proxies in this format:
+```shell
+session_name1
+type://user:pass@ip:port
+
+session_name2
+type://user:pass@ip:port
+```

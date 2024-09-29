@@ -1,5 +1,5 @@
+session_name1
 type://user:pass@ip:port
-type://user:pass:ip:port
-type://ip:port:user:pass
-type://ip:port@user:pass
-type://ip:port
+
+session_name2
+type://user:pass@ip:port
