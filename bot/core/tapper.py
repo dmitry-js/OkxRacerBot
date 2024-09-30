@@ -132,15 +132,16 @@ class Tapper:
             logger.error(f"{self.session_name} | Unknown error when getting user data: {error}")
             await asyncio.sleep(delay=randint(3, 7))
 
-    async def check_proxy(self, http_client: aiohttp.ClientSession, proxy: str) -> bool:
+    async def check_proxy(self, http_client: aiohttp.ClientSession, proxy: str):
+        GREEN = "\033[92m"
+        RESET = "\033[0m"
+
         try:
             response = await http_client.get(url='https://httpbin.org/ip', timeout=aiohttp.ClientTimeout(5))
             ip = (await response.json()).get('origin')
-            logger.info(f"{self.session_name} | Proxy IP: {ip}")
-            return True
+            logger.info(f"{GREEN}{self.session_name} | Proxy IP: {ip}{RESET}")
         except Exception as error:
             logger.error(f"{self.session_name} | Proxy: {proxy} | Error: {error}")
-            return False
 
     async def processing_tasks(self, http_client: aiohttp.ClientSession):
         try:
@@ -278,15 +279,9 @@ class Tapper:
         headers["User-Agent"] = generate_random_user_agent(device_type='android', browser_type='chrome')
         http_client = CloudflareScraper(headers=headers, connector=proxy_conn)
 
-        GREEN = "\033[92m"
-        RESET = "\033[0m"
-
         # Log the session name and proxy status
         if proxy:
-            logger.info(f"{GREEN}{self.session_name} | Using proxy: {GREEN}{proxy}{RESET}")
-            if not await self.check_proxy(http_client=http_client, proxy=proxy):
-                logger.error(f"{self.session_name} | Proxy is not working: {proxy}. Skipping this session.")
-                return
+            await self.check_proxy(http_client=http_client, proxy=proxy)
         else:
             logger.info(f"{self.session_name} | No proxy")
 

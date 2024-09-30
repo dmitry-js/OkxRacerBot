@@ -43,20 +43,19 @@ def get_session_names() -> list[str]:
 
 def get_proxies() -> dict[str, Proxy]:
     proxies = {}
+
     if settings.USE_PROXY_FROM_FILE:
         with open(file="bot/config/proxies.txt", encoding="utf-8-sig") as file:
-            session_name = None
             for row in file:
                 row = row.strip()
                 if row:
-                    if session_name is None:
-                        session_name = row
-                    else:
-                        proxy = Proxy.from_str(proxy=row).as_url
-                        proxies[session_name] = proxy
-                        session_name = None
-    return proxies
+                    session_name, proxy_str = row.split(':', 1)
+                    session_name = session_name.strip()
+                    proxy_str = proxy_str.strip()
 
+                    proxy = Proxy.from_str(proxy=proxy_str).as_url
+                    proxies[session_name] = proxy
+    return proxies
 
 async def get_tg_clients() -> list[Client]:
     global tg_clients
