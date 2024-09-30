@@ -105,9 +105,6 @@ You can also use arguments for quick start, for example:
 You can attach a proxy to a session name.
 Open `bot/config/proxies.txt` and add proxies in this format:
 ```shell
-session_name1
-type://user:pass@ip:port
-
-session_name2
-type://user:pass@ip:port
+session_name1: type://user:pass@ip:port
+session_name2: type://user:pass@ip:port
 ```
